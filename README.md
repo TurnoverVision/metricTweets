@@ -23,3 +23,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+### `Challenges`
+
+Implement Real-Time analysis using NLP modelling to Analyse 
+Spanish Words, this has to be in schema with the topic so one of the best Options I reconsider is Google Sentiment API
