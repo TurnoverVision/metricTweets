@@ -1,5 +1,6 @@
 const Twitter = require('twitter');
 
+
 module.exports = (app, io) => {
     let twitter = new Twitter({
         consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -11,7 +12,7 @@ module.exports = (app, io) => {
     let socketConnection;
     let twitterStream;
 
-    app.locals.searchTerm = 'JavaScript'; //Default search term for twitter stream.
+    // app.locals.searchTerm = 'Macri'; //Default search term for twitter stream.
     app.locals.showRetweets = false; //Default
 
     /**
@@ -38,7 +39,7 @@ module.exports = (app, io) => {
     app.post('/setSearchTerm', (req, res) => {
         let term = req.body.term;
         app.locals.searchTerm = term;
-        twitterStream.destroy();
+        // twitterStream.destroy();
         stream();
     });
 
@@ -61,7 +62,7 @@ module.exports = (app, io) => {
     //Establishes socket connection.
     io.on("connection", socket => {
         socketConnection = socket;
-        stream();
+        // stream();
         socket.on("connection", () => console.log("Client connected"));
         socket.on("disconnect", () => console.log("Client disconnected"));
     });
